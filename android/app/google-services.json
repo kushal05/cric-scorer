@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180508176485",
+    "project_id": "cric-scorer-app",
+    "storage_bucket": "cric-scorer-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180508176485:android:efaf0a9bd80bf448e6568c",
+        "android_client_info": {
+          "package_name": "com.cric_scorer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180508176485-ns22g714f1bl2mvfbuh3o5kg0o5d3nr5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4KKQXsnlAKvDS80tHpqcLlQaiSQW7WTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180508176485-ns22g714f1bl2mvfbuh3o5kg0o5d3nr5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
