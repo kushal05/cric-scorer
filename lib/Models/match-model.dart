@@ -25,6 +25,9 @@ class Match {
   User middleMan;
   String scorerEmail;
 
+  List<User> currentBatsmen;
+  User currentBowler;
+
   List<int> teamScores; // First innings, Second Innings
   List<int> teamWickets;
   List<int> opponentScores;
