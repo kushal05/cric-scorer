@@ -21,6 +21,7 @@ class Record {
   int runOuts;
 
   int wickets;
+  int ballsBowled;
   double overs;
   int maidens;
   int runsGiven;
