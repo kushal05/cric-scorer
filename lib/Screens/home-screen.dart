@@ -1,5 +1,5 @@
 import 'package:cric_scorer/Providers/home-provider.dart';
-import 'package:cric_scorer/Screens/navbar.dart';
+import 'package:cric_scorer/Screens/pagesInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -2,6 +2,7 @@ import 'package:cric_scorer/Screens/feed-screen.dart';
 import 'package:cric_scorer/Screens/profile-screen.dart';
 import 'package:cric_scorer/Screens/records-screen.dart';
 import 'package:cric_scorer/Screens/rules-customisation-screen.dart';
+import 'package:cric_scorer/Screens/score-view-screen.dart';
 import 'package:cric_scorer/Screens/scoring-screen.dart';
 import 'package:cric_scorer/Screens/start-match-root-screen.dart';
 import 'package:cric_scorer/Screens/team-selection-screen.dart';
@@ -16,6 +17,7 @@ List<Widget> navBarPages = [
   RulesCustomisation(),
   Scoring(),
   Records(),
+  ScoreView()
 ];
 
 Map<String, int> pagesMapIndex = {
@@ -39,12 +41,13 @@ Map<String, Widget> pagesMapWidget = {
 
 Map<String, List<dynamic>> pagesMap = {
   'feed': [Feed(), 0, 'Cric Scorer'],
-  'startMatchRoot': [StartMatchRoot(), 1, 'Start Match'],
+  'startMatchRoot': [StartMatchRoot(), 1, ''],
   'profile': [Profile(), 2, 'Profile'],
   'teamSelection': [TeamSelection(), 3, 'Team Selection'],
   'rulesCustomisation': [RulesCustomisation(), 4, 'Customize Rules'],
   'scoring': [Scoring(), 5, 'Scoring'],
   'records': [Records(), 6, 'Your Records'],
+  'scoreView': [ScoreView(), 7, 'Score']
 };
 
 List<BottomNavigationBarItem> navBarItems = [
