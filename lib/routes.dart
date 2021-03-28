@@ -1,3 +1,4 @@
+import 'package:cric_scorer/Providers/match-details-provider.dart';
 import 'package:cric_scorer/Providers/start-match-provider.dart';
 import 'package:cric_scorer/Providers/user-provider.dart';
 import 'package:cric_scorer/Screens/home-screen.dart';
@@ -68,6 +69,9 @@ Map<String, Widget Function(BuildContext context)> routes = {
       ),
       ChangeNotifierProvider(
           create: (_) => UserProvider()
+      ),
+      ChangeNotifierProvider(
+          create: (_) => MatchDetailsProvider()
       )
     ],
     child: Home()
