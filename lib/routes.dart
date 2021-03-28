@@ -1,3 +1,5 @@
+import 'package:cric_scorer/Providers/start-match-provider.dart';
+import 'package:cric_scorer/Providers/user-provider.dart';
 import 'package:cric_scorer/Screens/home-screen.dart';
 import 'package:cric_scorer/Screens/rules-customisation-screen.dart';
 import 'package:cric_scorer/Screens/splash-screen.dart';
@@ -56,9 +58,19 @@ Map<String, Widget Function(BuildContext context)> routes = {
     child: SignUp(),
   ),
   '/splash': (context) => Splash(),
-  '/home': (context) => ChangeNotifierProvider(
-      create: (_) => HomeProvider(),
-    child: Home(),
+  '/home': (context) => MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (_) => HomeProvider(),
+      ),
+      ChangeNotifierProvider(
+          create: (_) => StartMatchProvider()
+      ),
+      ChangeNotifierProvider(
+          create: (_) => UserProvider()
+      )
+    ],
+    child: Home()
   ),
   '/rules': (context) => RulesCustomisation(),
   '/team-selection': (context) => TeamSelection()
