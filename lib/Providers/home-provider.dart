@@ -1,5 +1,5 @@
 import 'package:cric_scorer/Screens/feed-screen.dart';
-import 'package:cric_scorer/Screens/navbar.dart';
+import 'package:cric_scorer/Screens/pagesInfo.dart';
 import 'package:flutter/material.dart';
 
 class HomeProvider extends ChangeNotifier {
