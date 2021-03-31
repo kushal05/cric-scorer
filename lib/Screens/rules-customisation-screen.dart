@@ -22,13 +22,14 @@ class _RulesCustomisationState extends State<RulesCustomisation> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: TextField(
                 controller: oversController,
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'Number Of Overs Per Innings',
                   hintText: 'Eg: 5, 10, 15, 20',
@@ -39,6 +40,7 @@ class _RulesCustomisationState extends State<RulesCustomisation> {
               padding: const EdgeInsets.all(24.0),
               child: TextField(
                 controller: widesController,
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'Number Of Consecutive Wides For A Run',
                   hintText: 'Eg: 1 (default), 2 (consecutive)',
@@ -50,6 +52,10 @@ class _RulesCustomisationState extends State<RulesCustomisation> {
               padding: const EdgeInsets.all(24.0),
               child: TextField(
                 controller: noBallsController,
+                keyboardType: TextInputType.number,
+                onEditingComplete: () {
+                  FocusScope.of(context).unfocus();
+                },
                 decoration: InputDecoration(
                   labelText: 'Number Of No-Balls Allowed In An Over',
                   hintText: 'Eg: 1 (default), 2 (extra)',
@@ -79,6 +85,9 @@ class _RulesCustomisationState extends State<RulesCustomisation> {
                   });
                   print('Selected value: $val');
                 },
+                onTap: (){
+                  FocusScope.of(context).unfocus();
+                },
               ),
             ),
             OutlineButton(
@@ -86,9 +95,10 @@ class _RulesCustomisationState extends State<RulesCustomisation> {
                   matchObject = updateMatchObject();
                   Provider.of<MatchDetailsProvider>(context, listen: false).setMatchObj(matchObject);
                   Provider.of<MatchDetailsProvider>(context, listen: false).setMatchRules(matchObject.matchId, matchObject.matchRules);
-                  Provider.of<HomeProvider>(context, listen: false).updatePageDetails('scoring');
+                  Provider.of<HomeProvider>(context, listen: false).updatePageStackIndex();
+                  Provider.of<HomeProvider>(context, listen: false).updatePageDetails('toss');
               },
-              child: Text('Start the match'),
+              child: Text('Go To Toss'),
             )
           ],
         ),
