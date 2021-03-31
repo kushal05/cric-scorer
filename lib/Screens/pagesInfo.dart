@@ -8,6 +8,8 @@ import 'package:cric_scorer/Screens/start-match-root-screen.dart';
 import 'package:cric_scorer/Screens/team-selection-screen.dart';
 import 'package:flutter/material.dart';
 
+import 'toss-screen.dart';
+
 
 List<Widget> navBarPages = [
   Feed(),
@@ -17,7 +19,8 @@ List<Widget> navBarPages = [
   RulesCustomisation(),
   Scoring(),
   Records(),
-  ScoreView()
+  ScoreView(),
+  Toss()
 ];
 
 Map<String, int> pagesMapIndex = {
@@ -47,7 +50,8 @@ Map<String, List<dynamic>> pagesMap = {
   'rulesCustomisation': [RulesCustomisation(), 4, 'Customize Rules'],
   'scoring': [Scoring(), 5, 'Scoring'],
   'records': [Records(), 6, 'Your Records'],
-  'scoreView': [ScoreView(), 7, 'Score']
+  'scoreView': [ScoreView(), 7, 'Score'],
+  'toss': [Toss(), 8, 'Toss']
 };
 
 List<BottomNavigationBarItem> navBarItems = [
