@@ -6,6 +6,13 @@ class HomeProvider extends ChangeNotifier {
   int currentNavBarPageIndex = 0;
   Widget currentNavBarPage = Feed();
   String currentHomePageTitle = 'Cric Scorer';
+  List<String> pagesStack = ['teamSelection', 'rulesCustomisation', 'toss', 'scoring'];
+  int pageStackIndex = 0;
+
+  updatePageStackIndex() {
+    pageStackIndex++;
+    notifyListeners();
+  }
 
   updateNavBarPageIndex(int value) {
     currentNavBarPageIndex = value;
@@ -23,7 +30,12 @@ class HomeProvider extends ChangeNotifier {
   }
 
   updatePageDetails(String type) {
-    List<dynamic> pageType = pagesMap[type];
+    List<dynamic> pageType;
+    if(type == 'startMatchRoot') {
+      pageType = pagesMap[pagesStack[pageStackIndex]];
+    } else {
+      pageType = pagesMap[type];
+    }
     currentNavBarPage = pageType[0];
     currentNavBarPageIndex = pageType[1];
     currentHomePageTitle = pageType[2];
