@@ -1,8 +1,11 @@
 import 'package:cric_scorer/Screens/root-screen.dart';
 import 'package:cric_scorer/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
