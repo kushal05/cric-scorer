@@ -26,6 +26,7 @@ class _StartMatchRootState extends State<StartMatchRoot> {
 
   void updatePageBasedOnUserState() {
     if(Provider.of<StartMatchProvider>(context, listen: false).canUserStartMatch(context)) {
+      Provider.of<HomeProvider>(context, listen: false).updatePageStackIndex();
       Provider.of<HomeProvider>(context, listen: false).updatePageDetails('teamSelection');
     } else {
       Provider.of<HomeProvider>(context, listen: false).updatePageDetails('scoreView');
